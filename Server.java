@@ -28,11 +28,43 @@ public class Server {
     }
 
     public void startReading(){
-
+        // Thread - Read data from the user
+        Runnable r1=()->{
+            System.out.println("Reader Started...");
+            try {
+                while(true){
+                    String msg=br.readLine();
+                    if(msg.equals("exit")){
+                        System.out.println("Client terminated the chat");
+                        socket.close();
+                        break;
+                    }
+                    System.out.println("Client : "+msg);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        };
+        new Thread(r1).start();
     }
 
     public void startWriting(){
-
+        // Thread - Take data from user and send to client
+        Runnable r2=()->{
+            System.out.println("Writer Started..");
+            while(true){
+                try {
+                    BufferedReader br1=new BufferedReader(new InputStreamReader(System.in));
+                    String content=br1.readLine();
+                    out.println(content);
+                    out.flush();
+                } catch (Exception e) {
+                    // TODO: handle exception
+                    e.printStackTrace();
+                }
+            }
+        };
+        new Thread(r2).start();
     }
     
     public static void main(String[] args) {
