@@ -66,13 +66,6 @@ public class Server {
             }
         };
         new Thread(r2).start();
-=======
-     //Thread 1
-    }
-
-    public void startWriting(){
-     //Thread 2
->>>>>>> a235691f0c4e6e5cdebf9009053c6326ccbb672b
     }
     
     public static void main(String[] args) {
