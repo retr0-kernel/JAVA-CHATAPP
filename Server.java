@@ -28,11 +28,11 @@ public class Server {
     }
 
     public void startReading(){
-
+     //Thread 1
     }
 
     public void startWriting(){
-
+     //Thread 2
     }
     
     public static void main(String[] args) {
