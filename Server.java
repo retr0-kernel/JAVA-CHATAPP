@@ -23,17 +23,18 @@ public class Server {
             startWriting();
 
         } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            System.out.println("Connection is closed");
         }
     }
 
     public void startReading(){
-<<<<<<< HEAD
         // Thread - Read data from the user
         Runnable r1=()->{
             System.out.println("Reader Started...");
-            try {
-                while(true){
+
+            try{
+            while(true){
                     String msg=br.readLine();
                     if(msg.equals("exit")){
                         System.out.println("Client terminated the chat");
@@ -41,9 +42,10 @@ public class Server {
                         break;
                     }
                     System.out.println("Client : "+msg);
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
+            }
+            }catch(Exception e){
+                //e.printStackTrace();
+                System.out.println("Connection is closed");
             }
         };
         new Thread(r1).start();
@@ -53,26 +55,24 @@ public class Server {
         // Thread - Take data from user and send to client
         Runnable r2=()->{
             System.out.println("Writer Started..");
-            while(true){
-                try {
+            try{
+            while(true && !socket.isClosed()){
                     BufferedReader br1=new BufferedReader(new InputStreamReader(System.in));
                     String content=br1.readLine();
                     out.println(content);
                     out.flush();
-                } catch (Exception e) {
-                    // TODO: handle exception
-                    e.printStackTrace();
-                }
+
+                    if(content.equals("exit")){
+                        socket.close();
+                        break;
+                    }
+            }
+            }catch(Exception e){
+                //e.printStackTrace();
+                System.out.println("Connection is closed");
             }
         };
         new Thread(r2).start();
-=======
-     //Thread 1
-    }
-
-    public void startWriting(){
-     //Thread 2
->>>>>>> a235691f0c4e6e5cdebf9009053c6326ccbb672b
     }
     
     public static void main(String[] args) {
