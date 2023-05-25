@@ -46,7 +46,7 @@ public class ChatApp extends javax.swing.JFrame
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("ChatApp by Team k1llsh0t");
+        setTitle("ChatApp by MarJava");
         setMaximumSize(new java.awt.Dimension(632, 417));
         setMinimumSize(new java.awt.Dimension(632, 417));
         setResizable(false);
@@ -223,7 +223,7 @@ public class ChatApp extends javax.swing.JFrame
         jLabel8.setBackground(new java.awt.Color(0, 0, 0));
         jLabel8.setFont(new java.awt.Font("Times New Roman", 2, 30)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 204, 204));
-        jLabel8.setText("        SOR Chat - Lets Talk");
+        jLabel8.setText("        Nakhre - Lets Talk");
         jLabel8.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel1.add(jLabel8);
         jLabel8.setBounds(240, 0, 390, 80);
