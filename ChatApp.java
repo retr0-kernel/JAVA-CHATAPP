@@ -4,7 +4,7 @@ import java.io.*;
 import java.net.*;
 
 
-public class SorChat extends javax.swing.JFrame 
+public class ChatApp extends javax.swing.JFrame 
 {
     public static String cstatus = "Disconnected";
     static String person2 = "";
@@ -16,7 +16,7 @@ public class SorChat extends javax.swing.JFrame
     public  static DataOutputStream out;
     public  static DataInputStream in;
     
-    public SorChat() {
+    public ChatApp() {
         initComponents();
         seticon();
     }
@@ -46,7 +46,7 @@ public class SorChat extends javax.swing.JFrame
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("SOR by Krish Srivastava");
+        setTitle("ChatApp by Team k1llsh0t");
         setMaximumSize(new java.awt.Dimension(632, 417));
         setMinimumSize(new java.awt.Dimension(632, 417));
         setResizable(false);
@@ -718,18 +718,18 @@ void seticon()
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SorChat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChatApp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SorChat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChatApp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SorChat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChatApp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SorChat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChatApp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-              SorChat root = new SorChat();  //initializing the main gui
+              ChatApp root = new ChatApp();  //initializing the main gui
               root.setVisible(true);                   //making it visible
               root.firsttimestatusverifier(false);    // verify the status of the app for the first time.
 
@@ -765,7 +765,3 @@ void seticon()
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
-
-/*
-Created and Managed by Navdeep Mishra
-*/
